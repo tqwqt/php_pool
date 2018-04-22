@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calc</title>
+</head>
+<body style="width: 100%; height: 100%; position: absolute">
+    <div id="main">
+
+    </div>
+<script>
+    var select_arr = ["+", "-", "*", "/", "%"];
+    var main = document.getElementById('main');
+    var textin = document.createElement("INPUT");
+    var textin2 = document.createElement("INPUT");
+    var select = document.createElement("select");
+    var submit = document.createElement("INPUT");
+
+
+    textin.setAttribute("type", "text");
+    textin.style.width = "25%";
+    textin2.setAttribute("type", "text");
+    textin2.style.width = "25%";
+    select.style.borderRadius = "-5px";
+    select.style.width = "15%";
+    select.style.marginRight = "5%";
+    select.style.marginLeft = "5%";
+    submit.setAttribute("type", "submit");
+    submit.style.width = "50%";
+    submit.style.marginTop = "5%";
+    submit.value = "Try me!";
+    submit.setAttribute("onclick", "calculate()");
+    for(var i = 0; i < select_arr.length; i++)
+    {
+        var opt = document.createElement("option");
+        opt.value = select_arr[i];
+        opt.text = select_arr[i];
+        select.appendChild(opt);
+    }
+    main.align= 'center';
+    main.style.paddingTop = "5%";
+    main.style.width = "20%";
+    main.style.height = "35%";
+    main.style.marginLeft = "40%";
+    main.style.marginRight = "40%";
+    main.style.backgroundColor = "violet";
+    main.appendChild(textin);
+    main.appendChild(select);
+    main.appendChild(textin2);
+    main.appendChild(submit);
+
+    function spam() {
+        alert("Please, use me...");
+    }
+    setInterval(spam, 30000);
+    function calculate() {
+        var a = textin.value;
+        var b = textin2.value;
+        var s = select.value;
+
+        if (Number(a) === NaN || Number(b) === NaN )
+        {
+            alert("Error e :(");
+            console.log("Error :(");
+            return ;
+        }
+        a = parseInt(a);
+        b = parseInt(b);
+        var res = 0;
+        if(a >= 0 && b === 0 && (s === "/" || s === "%") )
+        {
+            alert("It’s over 9000!");
+            console.log("It’s over 9000!");
+        }
+        else if (a >= 0 && b >= 0)
+        {
+            if (s === '+')
+            {
+                res = a + b;
+            }
+            else if (s === '-')
+            {
+                res = a - b;
+            }
+            else if (s === '*')
+            {
+                res = a * b;
+            }
+            else if (s === '/')
+            {
+                res = a / b;
+            }
+            else if (s === '%')
+            {
+                res = a % b;
+            }
+            alert(res);
+            console.log(res);
+        }
+        else
+        {
+            alert("Error :(");
+            console.log("Error :(");
+        }
+
+    }
+</script>
+</body>
+</html>

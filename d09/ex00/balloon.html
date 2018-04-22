@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Balloon</title>
+</head>
+<body>
+	<div id="kru" onclick="m_click();" onmouseout = "shrinks()" style=" border-radius: 100%; background-color: red; width: 200px;height: 200px;">
+		
+	</div>
+	<script>
+		function m_click(){
+			var elem = document.getElementById('kru');
+            switch(elem.style.backgroundColor) {
+                case 'red':
+                    elem.style.backgroundColor = 'green';
+                    break;
+                case 'green':
+                    elem.style.backgroundColor = 'blue';
+                    break;
+                case 'blue':
+                    elem.style.backgroundColor = 'red';
+                    break;
+            }
+            var w = parseInt(elem.style.width);
+            var h = parseInt(elem.style.height);
+            w += 10;
+            h += 10;
+            if (w > 420)
+            {
+                w = 200;
+                h = 200;
+            }
+            elem.style.width = w + "px";
+            elem.style.height = h + "px";
+
+		}
+		function shrinks() {
+
+            var elem = document.getElementById('kru');
+
+            switch(elem.style.backgroundColor) {
+                case 'blue':
+                    elem.style.backgroundColor = 'green';
+                    break;
+                case 'green':
+                    elem.style.backgroundColor = 'red';
+                    break;
+                case 'red':
+                    elem.style.backgroundColor = 'blue';
+                    break;
+            }
+            var w = parseInt(elem.style.width);
+            var h = parseInt(elem.style.height);
+
+            if (w > 200)
+            {
+                w -= 5;
+                h -= 5;
+                elem.style.width = w + "px";
+                elem.style.height = h + "px";
+            }
+        }
+	</script>
+</body>
+</html>

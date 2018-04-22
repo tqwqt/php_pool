@@ -1,0 +1,32 @@
+
+<- Color ----------------------------------------------------------------------
+The Color class handles RGB colors.
+
+An instance can be contructed from either a RGB value:
+new Color( array( 'rgb' => 12345 ) );
+
+Or from distinct red, green, blue constitutives:
+new Color( array( 'red' => 255, 'green' => 255, 'blue' => 255 ) );
+
+Red, green, blue constitutives and RGB values are converted to intergers.
+Negative or > to 255 color constitutives are left as is.
+Any other use is undefined behaviour.
+
+The class provides the following methods :
+
+Color   add( Color $rhs );
+Adds each color constitutive and returns a new Color instance.
+
+Color   sub( Color $rhs );
+Substracts each color constitutive and returns a new Color instance.
+
+Color   mult( $f );
+Multiplies each color constitutive by factor $f and returns a new Color
+instance.
+---------------------------------------------------------------------- Color ->
+Fatal error: Uncaught ArgumentCountError: Too few arguments to function Color::__construct(), 0 passed in /Users/vhavryle/work_vh/t_PHP/d06/ex00/Color.class.php on line 26 and exactly 1 expected in /Users/vhavryle/work_vh/t_PHP/d06/ex00/Color.class.php:11
+Stack trace:
+#0 /Users/vhavryle/work_vh/t_PHP/d06/ex00/Color.class.php(26): Color->__construct()
+#1 /Users/vhavryle/work_vh/t_PHP/d06/ex00/main_00.php(13): Color->add(Object(Color))
+#2 {main}
+  thrown in /Users/vhavryle/work_vh/t_PHP/d06/ex00/Color.class.php on line 11

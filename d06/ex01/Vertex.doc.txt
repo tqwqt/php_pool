@@ -1,0 +1,18 @@
+
+<- Vertex ----------------------------------------------------------------------
+The Vertex class represent a point in space: the "vertex".
+
+An instance can be contructed from either a vertex value:
+new Vertex( array( 'x' => 0.0, 'y' => 0.0, 'z' => 0.0 ) );
+
+Or with color and homogeneous coordinates:
+$red = new Color( array( 'red' => 255, 'green' =>   0, 'blue' =>   0 ) );
+new Vertex( array( 'x' => 0.0, 'y' => 1.0, 'z' => 0.0, 'color' => $red ) );
+
+Its x axis coordinate
+Its y axis coordinate
+Its z depth coordinate
+Its w homogeneous coordinate
+A color represented by an instance of the Color Class
+By default color has value 0xffffff
+---------------------------------------------------------------------- Vertex ->
